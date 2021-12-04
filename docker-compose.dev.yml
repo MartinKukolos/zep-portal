@@ -57,7 +57,6 @@ services:
       - "9000:9000"
       - "9001:9001"
 
-
 volumes:
   cake_data:
   minio_data:
