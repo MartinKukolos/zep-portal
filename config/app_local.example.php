@@ -25,7 +25,8 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', '__SALT__'),
+        # 'salt' => env('SECURITY_SALT', '__SALT__'),
+        'salt' => file_get_contents(env('SECURITY_SALT_FILE', '/run/secrets/security_salt'))
     ],
 
     /*

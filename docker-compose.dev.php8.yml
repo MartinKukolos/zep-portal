@@ -11,6 +11,8 @@ services:
     # image: ghcr.io/maymeow/cake-notify/cake-notify:latest
     command: php bin/cake.php server -H 0.0.0.0
     env_file: .env.dev
+    secrets:
+      - security_salt
     container_name: cake_app
     restart: unless-stopped
     working_dir: /var/www/
@@ -61,3 +63,7 @@ services:
 volumes:
   cake_data:
   minio_data:
+
+secrets:
+  security_salt:
+    file: .salt.txt
